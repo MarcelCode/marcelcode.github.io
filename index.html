@@ -1,14 +1,30 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="/src/style.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/src/style/style.css" rel="stylesheet">
+    <link href="/src/style/stars.scss" rel="stylesheet">
     <title>Marcel Siegmann</title>
 </head>
 <body>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+<header class="h-screen w-full header relative">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+
+    <div class="absolute inset-0 grid grid-cols-2 px-4">
+        <div class=" flex items-center">
+            <h1 class="text-white text-2xl font-bold">Left Side Text Left Side Text</h1>
+        </div>
+        <div class=" h-full" id="header-map">
+        </div>
+    </div>
+</header>
+<main class="h-screen w-full bg-blue-500">
+
+</main>
+
+<script type="module" src="/src/logic/globe.ts"></script>
 </body>
 </html>
