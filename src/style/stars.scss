@@ -24,12 +24,12 @@ $shadows-big:    multiple-box-shadow(150);
   height: 1px;
   background: transparent;
   box-shadow: $shadows-small;
-  animation: animStar 250s linear infinite;
+  animation: animStar 300s linear infinite;
 
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    left: -6000px;
     width: 1px;
     height: 1px;
     background: transparent;
@@ -42,12 +42,12 @@ $shadows-big:    multiple-box-shadow(150);
   height: 2px;
   background: transparent;
   box-shadow: $shadows-medium;
-  animation: animStar 500s linear infinite;
+  animation: animStar 600s linear infinite;
 
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    left: -6000px;
     width: 2px;
     height: 2px;
     background: transparent;
@@ -60,12 +60,12 @@ $shadows-big:    multiple-box-shadow(150);
   height: 3px;
   background: transparent;
   box-shadow: $shadows-big;
-  animation: animStar 800s linear infinite;
+  animation: animStar 1000s linear infinite;
 
   &:after {
     content: " ";
     position: absolute;
-    top: 2000px;
+    left: -6000px;
     width: 3px;
     height: 3px;
     background: transparent;
@@ -96,9 +96,9 @@ $shadows-big:    multiple-box-shadow(150);
 
 @keyframes animStar {
   from {
-    transform: translateY(0px);
+    transform: translateX(0px);
   }
   to {
-    transform: translateY(-2000px);
+    transform: translateX(6000px);
   }
 }

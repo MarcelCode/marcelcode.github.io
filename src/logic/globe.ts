@@ -24,8 +24,9 @@ const map = new maplibregl.Map({
         },
         'sources': {
             'satellite': {
-                'tiles': ['https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2020_3857/default/g/{z}/{y}/{x}.jpg'],
-                'type': 'raster'
+                'tiles': ['https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2024_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg'],
+                'type': 'raster',
+                'attribution': '© <a href="https://s2maps.eu" target="_blank">Sentinel-2 cloudless</a> by <a href="https://eox.at" target="_blank">EOX IT Services GmbH</a>'
             },
         },
         'layers': [
@@ -40,7 +41,6 @@ const map = new maplibregl.Map({
         }
     }
 });
-
 
 map.on('load', () => {
     let longitude = 0;
@@ -63,7 +63,7 @@ map.on('load', () => {
         clearTimeout(mouseTimeout);
         mouseTimeout = setTimeout(() => {
             isMouseMoving = false;
-        }, 150); // Resume rotation 150ms after mouse stops
+        }, 200); // Resume rotation 150ms after mouse stops
     });
 
     function rotateGlobe() {
@@ -72,9 +72,8 @@ map.on('load', () => {
             longitude = (longitude + 0.1) % 360;
         }
 
-        // Add subtle parallax effect based on mouse position
-        const targetParallaxLng = mouseX * 10; // Adjust multiplier for effect strength
-        const targetParallaxLat = -mouseY * 10; // Negative to invert vertical movement
+        const targetParallaxLng = mouseX * 30; // Adjust multiplier for effect strength
+        const targetParallaxLat = -mouseY * 30; // Negative to invert vertical movement
 
         // Smoothly interpolate towards target (lerp with factor 0.05 for smooth transition)
         const lerpFactor = 0.05;
@@ -86,4 +85,9 @@ map.on('load', () => {
     }
 
     rotateGlobe();
+});
+
+window.addEventListener('resize', () => {
+    const newZoom = calculateGlobeZoom(document.getElementById('header-map')!);
+    map.setZoom(newZoom);
 });
