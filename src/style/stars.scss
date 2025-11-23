@@ -3,16 +3,16 @@
 
 // n is number of stars required
 @function multiple-box-shadow ($n) {
-  $value: '#{math.random(2000)}px #{math.random(2000)}px #FFF';
+  $value: '#{math.random(6000)}px #{math.random(2000)}px #FFF';
   @for $i from 2 through $n {
-    $value: '#{$value} , #{math.random(2000)}px #{math.random(2000)}px #FFF';
+    $value: '#{$value} , #{math.random(6000)}px #{math.random(2000)}px #FFF';
   }
   @return string.unquote($value);
 }
 
-$shadows-small:  multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(200);
-$shadows-big:    multiple-box-shadow(100);
+$shadows-small:  multiple-box-shadow(1500);
+$shadows-medium: multiple-box-shadow(600);
+$shadows-big:    multiple-box-shadow(150);
 
 .header {
   background: radial-gradient(circle at 80% 50%, #1B2735 0%, #090A0F 100%);

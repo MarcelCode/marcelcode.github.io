@@ -1,9 +1,21 @@
 import maplibregl from 'maplibre-gl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 
+function calculateGlobeZoom(containerElement: HTMLElement): number {
+    const width = containerElement.clientWidth;
+    const height = containerElement.clientHeight;
+
+    const minDimension = Math.min(width, height);
+    const fillFactor = 0.7;
+
+    return Math.log2(minDimension / (256 * fillFactor));
+}
+
+const zoom = calculateGlobeZoom(document.getElementById('header-map')!)
+
 const map = new maplibregl.Map({
     container: 'header-map',
-    zoom: 2.2,
+    zoom: zoom,
     interactive: false,
     style: {
         'version': 8,
