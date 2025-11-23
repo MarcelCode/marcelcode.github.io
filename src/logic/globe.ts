@@ -42,11 +42,12 @@ const map = new maplibregl.Map({
 });
 
 
-// Rotate the globe infinitely along the equator with parallax effect
 map.on('load', () => {
     let longitude = 0;
     let mouseX = 0;
     let mouseY = 0;
+    let currentParallaxLng = 0;
+    let currentParallaxLat = 0;
     let isMouseMoving = false;
     let mouseTimeout: number;
 
@@ -72,10 +73,15 @@ map.on('load', () => {
         }
 
         // Add subtle parallax effect based on mouse position
-        const parallaxLng = mouseX * 10; // Adjust multiplier for effect strength
-        const parallaxLat = -mouseY * 10; // Negative to invert vertical movement
+        const targetParallaxLng = mouseX * 10; // Adjust multiplier for effect strength
+        const targetParallaxLat = -mouseY * 10; // Negative to invert vertical movement
 
-        map.setCenter([longitude + parallaxLng, parallaxLat]);
+        // Smoothly interpolate towards target (lerp with factor 0.05 for smooth transition)
+        const lerpFactor = 0.05;
+        currentParallaxLng += (targetParallaxLng - currentParallaxLng) * lerpFactor;
+        currentParallaxLat += (targetParallaxLat - currentParallaxLat) * lerpFactor;
+
+        map.setCenter([longitude + currentParallaxLng, currentParallaxLat]);
         requestAnimationFrame(rotateGlobe);
     }
 
