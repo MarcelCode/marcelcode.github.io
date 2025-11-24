@@ -69,7 +69,7 @@ map.on('load', () => {
     function rotateGlobe() {
         // Only auto-rotate when mouse is not moving
         if (!isMouseMoving) {
-            longitude = (longitude + 0.1) % 360;
+            longitude = (longitude - 0.1) % 360;
         }
 
         const targetParallaxLng = mouseX * 30; // Adjust multiplier for effect strength

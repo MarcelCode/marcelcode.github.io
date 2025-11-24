@@ -29,7 +29,7 @@ $shadows-big:    multiple-box-shadow(150);
   &:after {
     content: " ";
     position: absolute;
-    left: 6000px;
+    left: -6000px;
     width: 1px;
     height: 1px;
     background: transparent;
@@ -47,7 +47,7 @@ $shadows-big:    multiple-box-shadow(150);
   &:after {
     content: " ";
     position: absolute;
-    left: 6000px;
+    left: -6000px;
     width: 2px;
     height: 2px;
     background: transparent;
@@ -65,7 +65,7 @@ $shadows-big:    multiple-box-shadow(150);
   &:after {
     content: " ";
     position: absolute;
-    left: 6000px;
+    left: -6000px;
     width: 3px;
     height: 3px;
     background: transparent;
@@ -99,6 +99,6 @@ $shadows-big:    multiple-box-shadow(150);
     transform: translateX(0px);
   }
   to {
-    transform: translateX(-6000px);
+    transform: translateX(6000px);
   }
 }
