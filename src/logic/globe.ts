@@ -34,15 +34,31 @@ const map = new maplibregl.Map({
                 'id': 'Satellite',
                 'type': 'raster',
                 'source': 'satellite',
+                'paint': {
+                    'raster-opacity': 0,
+                    'raster-opacity-transition': {
+                        duration: 1000,
+                        delay: 0
+                    }
+                }
             },
         ],
         'sky': {
-            'atmosphere-blend': 0.3,
+            'atmosphere-blend': 0,
         }
-    }
+    },
+    fadeDuration: 0  // Disable tile fade-in for instant appearance once loaded
 });
 
 map.on('load', () => {
+    map.once('idle', () => {
+        map.setPaintProperty('Satellite', 'raster-opacity', 1);
+
+        map.setSky({
+            'atmosphere-blend': 0.3
+        });
+    });
+
     let longitude = 0;
     let mouseX = 0;
     let mouseY = 0;
