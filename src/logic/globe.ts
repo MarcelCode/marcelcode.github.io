@@ -66,9 +66,32 @@ map.on('load', () => {
     let currentParallaxLat = 0;
     let isMouseMoving = false;
     let mouseTimeout: number;
+    let isGlobeVisible = true;
+    let animationFrameId: number;
 
-    // Track mouse position
-    document.addEventListener('mousemove', (e) => {
+    // Intersection Observer to pause animation when globe is off-screen
+    const observer = new IntersectionObserver(
+        (entries) => {
+            isGlobeVisible = entries[0].isIntersecting;
+            if (isGlobeVisible && !animationFrameId) {
+                rotateGlobe();
+            }
+        },
+        { threshold: 0 }
+    );
+    observer.observe(document.getElementById('header-map')!);
+
+    // Throttle mousemove for better performance
+    let lastMouseUpdate = 0;
+    const mouseUpdateInterval = 16; // ~60fps
+
+    // Track mouse position (only in header area)
+    const header = document.querySelector('header');
+    header?.addEventListener('mousemove', (e) => {
+        const now = Date.now();
+        if (now - lastMouseUpdate < mouseUpdateInterval) return;
+        lastMouseUpdate = now;
+
         // Normalize mouse position to -1 to 1 range
         mouseX = (e.clientX / window.innerWidth) * 2 - 1;
         mouseY = (e.clientY / window.innerHeight) * 2 - 1;
@@ -79,25 +102,30 @@ map.on('load', () => {
         clearTimeout(mouseTimeout);
         mouseTimeout = setTimeout(() => {
             isMouseMoving = false;
-        }, 200); // Resume rotation 150ms after mouse stops
+        }, 200);
     });
 
     function rotateGlobe() {
+        if (!isGlobeVisible) {
+            animationFrameId = 0;
+            return;
+        }
+
         // Only auto-rotate when mouse is not moving
         if (!isMouseMoving) {
             longitude = (longitude - 0.1) % 360;
         }
 
-        const targetParallaxLng = mouseX * 30; // Adjust multiplier for effect strength
-        const targetParallaxLat = -mouseY * 30; // Negative to invert vertical movement
+        const targetParallaxLng = mouseX * 30;
+        const targetParallaxLat = -mouseY * 30;
 
-        // Smoothly interpolate towards target (lerp with factor 0.05 for smooth transition)
+        // Smoothly interpolate towards target
         const lerpFactor = 0.05;
         currentParallaxLng += (targetParallaxLng - currentParallaxLng) * lerpFactor;
         currentParallaxLat += (targetParallaxLat - currentParallaxLat) * lerpFactor;
 
         map.setCenter([longitude + currentParallaxLng, currentParallaxLat]);
-        requestAnimationFrame(rotateGlobe);
+        animationFrameId = requestAnimationFrame(rotateGlobe);
     }
 
     rotateGlobe();

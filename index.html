@@ -46,7 +46,7 @@
     <div id="stars3"></div>
 
     <!-- Content grid -->
-    <div class="absolute inset-0 grid grid-cols-1 lg:grid-cols-2">
+    <div class="absolute inset-0 grid grid-cols-1 lg:grid-cols-2 items-center justify-center">
         <!-- Left side text -->
         <div class="flex items-center relative z-10">
             <div class="flex flex-col gap-6 max-w-2xl text-center lg:text-left mx-auto lg:ml-auto lg:mr-0 px-4 md:px-10">
@@ -56,12 +56,12 @@
                         <span class="text-secondary-accent text-xs font-bold uppercase tracking-wider">Geospatial Software Engineer</span>
                     </div>
                     <h1 class="text-text-light text-5xl md:text-7xl font-black leading-tight tracking-[-0.033em]">
-                        Innovating <br/><span
-                            class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary-accent">Geospatial</span>
+                        Innovating <span class="text-transparent bg-clip-text bg-linear-to-r from-primary to-secondary-accent">Geospatial</span>
                         Solutions
                     </h1>
                     <h2 class="text-text-muted text-lg md:text-xl font-normal leading-relaxed max-w-lg mx-auto lg:mx-0">
-                        Building the future of location intelligence through precision, cloud-native architecture, and creative problem-solving.
+                        Building the future of location intelligence through precision, cloud-native architecture, and
+                        creative problem-solving.
                     </h2>
                 </div>
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start pt-4">
@@ -414,20 +414,30 @@
 
 <script type="module" src="/src/logic/globe.ts"></script>
 <script>
-    // Navbar scroll effect
+    // Navbar scroll effect with throttling
     const navbar = document.getElementById('navbar');
     const header = document.querySelector('header');
     const headerHeight = header.offsetHeight;
+    let isScrolling = false;
+    let lastScrollY = 0;
 
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.remove('bg-transparent', 'border-transparent', 'backdrop-blur-0');
-            navbar.classList.add('bg-surface-dark/90', 'border-border-dark', 'backdrop-blur-md');
-        } else {
-            navbar.classList.remove('bg-surface-dark/90', 'border-border-dark', 'backdrop-blur-md');
-            navbar.classList.add('bg-transparent', 'border-transparent', 'backdrop-blur-0');
+        lastScrollY = window.scrollY;
+
+        if (!isScrolling) {
+            isScrolling = true;
+            requestAnimationFrame(() => {
+                if (lastScrollY > 50) {
+                    navbar.classList.remove('bg-transparent', 'border-transparent', 'backdrop-blur-0');
+                    navbar.classList.add('bg-surface-dark/90', 'border-border-dark', 'backdrop-blur-md');
+                } else {
+                    navbar.classList.remove('bg-surface-dark/90', 'border-border-dark', 'backdrop-blur-md');
+                    navbar.classList.add('bg-transparent', 'border-transparent', 'backdrop-blur-0');
+                }
+                isScrolling = false;
+            });
         }
-    });
+    }, { passive: true });
 </script>
 </body>
 </html>
