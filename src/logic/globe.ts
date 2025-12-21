@@ -6,7 +6,7 @@ function calculateGlobeZoom(containerElement: HTMLElement): number {
     const height = containerElement.clientHeight;
 
     const minDimension = Math.min(width, height);
-    const fillFactor = 0.7;
+    const fillFactor = 0.8;
 
     return Math.log2(minDimension / (256 * fillFactor));
 }
