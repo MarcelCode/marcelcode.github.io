@@ -18,6 +18,9 @@ async function initGlobe() {
         container: 'header-map',
         zoom: zoom,
         interactive: false,
+        attributionControl: {
+            compact: true
+        },
         style: {
             'version': 8,
             'projection': {

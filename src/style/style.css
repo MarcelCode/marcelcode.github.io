@@ -9,6 +9,9 @@
   --color-text-light: #E0E6F0;
   --color-text-muted: #8A94A8;
 
+  --color-primary-soft: #3fffd4;  /* use for icons, outlines, subtle highlights */
+  --color-primary-strong: #00ffc0;  /* keep for CTAs and gradients */
+
   --font-family-display: "Space Grotesk", sans-serif;
   --font-family-body: "Noto Sans", sans-serif;
 }
