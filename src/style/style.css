@@ -1,16 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #00ffc0;
+  --color-primary: #00eeb4;
   --color-secondary-accent: #00d4ff;
   --color-background-dark: #0A0B12;
   --color-surface-dark: #151820;
   --color-border-dark: #2A3042;
   --color-text-light: #E0E6F0;
-  --color-text-muted: #8A94A8;
-
-  --color-primary-soft: #3fffd4;  /* use for icons, outlines, subtle highlights */
-  --color-primary-strong: #00ffc0;  /* keep for CTAs and gradients */
+  --color-text-muted: #929aaa;
 
   --font-family-display: "Space Grotesk", sans-serif;
   --font-family-body: "Noto Sans", sans-serif;
