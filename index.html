@@ -15,7 +15,10 @@
      class="fixed top-0 z-50 w-full border-b border-solid border-transparent bg-transparent backdrop-blur-0 transition-all duration-500">
     <div class="px-4 md:px-10 py-5 flex items-center justify-between max-w-[1400px] mx-auto">
         <div class="flex items-center text-white">
-            <h2 class="text-text-light text-xl font-bold leading-tight tracking-[-0.015em]">Marcel Siegmann</h2>
+            <h2 class="text-text-light text-xl font-bold leading-tight tracking-[-0.015em]">
+                <a href="#" onclick="preventDefault(); window.scrollTo({top: 0, behavior: 'smooth'});">
+                    Marcel Siegmann</a>
+            </h2>
         </div>
         <div class="hidden md:flex items-center gap-8">
             <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider"
@@ -98,11 +101,21 @@
                 </div>
                 <div class="flex-1 text-center md:text-left">
                     <h2 class="text-text-light text-3xl font-bold mb-2">About Me</h2>
-                    <h3 class="text-secondary-accent text-lg font-medium mb-4">Innovation Team Lead & Geospatial Software Engineer</h3>
+                    <h3 class="text-secondary-accent text-lg font-medium mb-4">Innovation Team Lead & Geospatial
+                        Software Engineer</h3>
                     <p class="text-text-muted text-base font-normal leading-relaxed mb-6 font-body">
-                        My name is Marcel Siegmann, and I am an Innovation Team Lead and Geospatial Software Engineer at EOMAP, with over ten years of experience in geospatial and cloud technologies. I focus on transforming complex Earth observation data into products that people can actually use. My obsession lies in the intersection of cloud-native architecture and location intelligence, where performance, cost efficiency, and a strong user experience all matter.
+                        My name is Marcel Siegmann, and I am an Innovation Team Lead and Geospatial Software Engineer at
+                        EOMAP, with over ten years of experience in geospatial and cloud technologies. I focus on
+                        transforming complex Earth observation data into products that people can actually use. My
+                        obsession lies in the intersection of cloud-native architecture and location intelligence, where
+                        performance, cost efficiency, and a strong user experience all matter.
                         <br><br>
-                        Over the years, I have built and scaled satellite processing and API platforms in the cloud and contributed to award-winning frontend solutions that enhance decision-making with a strong focus on user experience. I really enjoy pushing ideas from quick prototypes to reliable production systems. I am particularly interested in the intersection of modern geospatial building blocks and serverless cloud architectures, where I love to combine proven open-source tools to create something new.
+                        Over the years, I have built and scaled satellite processing and API platforms in the cloud and
+                        contributed to award-winning frontend solutions that enhance decision-making with a strong focus
+                        on user experience. I really enjoy pushing ideas from quick prototypes to reliable production
+                        systems. I am particularly interested in the intersection of modern geospatial building blocks
+                        and serverless cloud architectures, where I love to combine proven open-source tools to create
+                        something new.
                     </p>
                     <button class="inline-flex items-center gap-2 cursor-pointer rounded-lg h-10 px-6 bg-border-dark hover:bg-secondary-accent/20 text-secondary-accent text-sm font-bold transition-colors border border-border-dark shadow-md shadow-secondary-accent/10">
                         <span class="material-symbols-outlined text-lg">download</span>
@@ -117,251 +130,247 @@
 <!-- Skills Section -->
 <section class="py-20 bg-background-dark" id="skills">
     <div class="container mx-auto px-4 md:px-10 max-w-[1200px]">
-            <div class="mb-10 text-center md:text-left">
-                <h2 class="text-text-light text-3xl font-bold leading-tight mb-4">Technical Skills</h2>
-                <p class="text-text-muted">Tools and technologies used in geospatial product development.</p>
+        <div class="mb-10 text-center md:text-left">
+            <h2 class="text-text-light text-3xl font-bold leading-tight mb-4">Technical Skills</h2>
+            <p class="text-text-muted">Tools and technologies used in geospatial product development.</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Backend -->
+            <div class="flex flex-col gap-4 bg-surface-dark rounded-xl p-6 border border-border-dark shadow-lg shadow-primary/5">
+                <h3 class="text-text-light font-bold text-lg border-b border-border-dark pb-3 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">terminal</span> Backend
+                </h3>
+                <ul class="flex flex-col gap-2">
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Python
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> FastAPI
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Django
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Golang
+                    </li>
+                </ul>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Backend -->
-                <div class="flex flex-col gap-4 bg-surface-dark rounded-xl p-6 border border-border-dark shadow-lg shadow-primary/5">
-                    <h3 class="text-text-light font-bold text-lg border-b border-border-dark pb-3 flex items-center gap-3">
-                        <span class="material-symbols-outlined text-primary text-2xl">terminal</span> Backend
-                    </h3>
-                    <ul class="flex flex-col gap-2">
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Python
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> FastAPI
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Django
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Golang
-                        </li>
-                    </ul>
-                </div>
 
-                <!-- Frontend -->
-                <div class="flex flex-col gap-4 bg-surface-dark rounded-xl p-6 border border-border-dark shadow-lg shadow-primary/5">
-                    <h3 class="text-text-light font-bold text-lg border-b border-border-dark pb-3 flex items-center gap-3">
-                        <span class="material-symbols-outlined text-primary text-2xl">web</span> Frontend
-                    </h3>
-                    <ul class="flex flex-col gap-2">
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> TypeScript
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Vue.js
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Vuetify
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Cloud & DevOps -->
-                <div class="flex flex-col gap-4 bg-surface-dark rounded-xl p-6 border border-border-dark shadow-lg shadow-primary/5">
-                    <h3 class="text-text-light font-bold text-lg border-b border-border-dark pb-3 flex items-center gap-3">
-                        <span class="material-symbols-outlined text-primary text-2xl">cloud_queue</span> Cloud & DevOps
-                    </h3>
-                    <ul class="flex flex-col gap-2">
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> AWS CDK
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Serverless
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Docker
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> GitHub Actions
-                        </li>
-                    </ul>
-                </div>
-
-                <!-- Geospatial Systems -->
-                <div class="flex flex-col gap-4 bg-surface-dark rounded-xl p-6 border border-border-dark shadow-lg shadow-primary/5">
-                    <h3 class="text-text-light font-bold text-lg border-b border-border-dark pb-3 flex items-center gap-3">
-                        <span class="material-symbols-outlined text-primary text-2xl">globe_asia</span> Geospatial
-                    </h3>
-                    <ul class="flex flex-col gap-2">
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> COG, MVT, PMTiles
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Rasterio, rio-tiler
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> GeoPandas, Shapely
-                        </li>
-                        <li class="flex items-center gap-2 text-text-muted text-sm font-body">
-                            <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Maplibre, Mapbox
-                        </li>
-                    </ul>
-                </div>
+            <!-- Frontend -->
+            <div class="flex flex-col gap-4 bg-surface-dark rounded-xl p-6 border border-border-dark shadow-lg shadow-primary/5">
+                <h3 class="text-text-light font-bold text-lg border-b border-border-dark pb-3 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">web</span> Frontend
+                </h3>
+                <ul class="flex flex-col gap-2">
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> TypeScript
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Vue.js
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Vuetify
+                    </li>
+                </ul>
             </div>
+
+            <!-- Cloud & DevOps -->
+            <div class="flex flex-col gap-4 bg-surface-dark rounded-xl p-6 border border-border-dark shadow-lg shadow-primary/5">
+                <h3 class="text-text-light font-bold text-lg border-b border-border-dark pb-3 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">cloud_queue</span> Cloud & DevOps
+                </h3>
+                <ul class="flex flex-col gap-2">
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> AWS CDK
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Serverless
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Docker
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> GitHub
+                        Actions
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Geospatial Systems -->
+            <div class="flex flex-col gap-4 bg-surface-dark rounded-xl p-6 border border-border-dark shadow-lg shadow-primary/5">
+                <h3 class="text-text-light font-bold text-lg border-b border-border-dark pb-3 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-2xl">globe_asia</span> Geospatial
+                </h3>
+                <ul class="flex flex-col gap-2">
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> COG, MVT,
+                        PMTiles
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Rasterio,
+                        rio-tiler
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> GeoPandas,
+                        Shapely
+                    </li>
+                    <li class="flex items-center gap-2 text-text-muted text-sm font-body">
+                        <span class="material-symbols-outlined text-primary text-base">chevron_right</span> Maplibre,
+                        Mapbox
+                    </li>
+                </ul>
+            </div>
+        </div>
     </div>
 </section>
 
 <!-- Projects Section -->
 <section class="py-20 bg-background-dark border-t border-border-dark" id="projects">
     <div class="container mx-auto px-4 md:px-10 max-w-[1200px]">
-            <div class="flex flex-col md:flex-row justify-between items-end mb-12">
-                <div>
-                    <h2 class="text-text-light text-3xl font-bold leading-tight mb-2">Featured Projects</h2>
-                    <p class="text-text-muted">A selection of my recent work and notable achievements in geospatial
-                        software engineering and innovation.</p>
-                </div>
-                <a class="hidden md:inline-flex items-center text-secondary-accent hover:text-primary transition-colors font-bold mt-4 md:mt-0 uppercase tracking-wider"
-                   href="#">
-                    View All Entries <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>
+        <div class="flex flex-col md:flex-row justify-between items-end mb-12">
+            <div>
+                <h2 class="text-text-light text-3xl font-bold leading-tight mb-2">Featured Projects</h2>
+                <p class="text-text-muted">A selection of my recent work and notable achievements in geospatial
+                    software engineering and innovation.</p>
+            </div>
+            <!--                <a class="hidden md:inline-flex items-center text-secondary-accent hover:text-primary transition-colors font-bold mt-4 md:mt-0 uppercase tracking-wider"-->
+            <!--                   href="#">-->
+            <!--                    View All Entries <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>-->
+            <!--                </a>-->
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Project 1 -->
+            <div class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
+                <a href="/projects/rastless/" class="block">
+                    <div class="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
+                         style="background-image: url('/images/projects/rastless/rastless.png');"></div>
                 </a>
-            </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                <!-- Project 1 -->
-                <div class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
-                    <div class="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8ULKHkNcB_2urx-g41Rv8N20YbZ8yRPq6ZW1-ZNC0q6c6EQgaWAY_AblbMROJB1MZYfmywl8pThwqzOWFbhnJ_o90yo4GOLm1w2s5vFaKDgfZtl8j5waO4W8LqZltdrOUGHAzDz3c0QyYHUhkKMY5K0z3vHpqyJUNVNzQcN1BCX-K7AnsvwwP_pw7zy8ReXMtMHPkQCUq-GmzzulfpUmmhcMOv3QoOXURkNBhR-5u1F1SLOSJ3ZL4mF7CxPRB9lzIa9X3Uev-woA');"></div>
-                    <div class="p-6 flex flex-col grow">
-                        <h3 class="text-text-light text-xl font-bold mb-2">URBAN HEAT SIGNATURE ANALYZER</h3>
-                        <p class="text-text-muted text-sm leading-relaxed mb-4 line-clamp-3 font-body">
-                            A React-based web application visualizing urban heat islands using real-time satellite
-                            imagery. Processes Landsat 8 data on the fly via serverless AWS Lambda functions.
-                        </p>
-                        <div class="mt-auto pt-4 flex items-center justify-between border-t border-border-dark">
-                            <div class="flex gap-2">
-                                <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">REACT</span>
-                                <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">AWS</span>
-                            </div>
-                            <button class="text-secondary-accent hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined">launch</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
 
-                <!-- Project 2 -->
-                <div class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
-                    <div class="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCpHOJu_q1R1coc8SWSomr2SeZ5UDXo6bhZbXR-aViW761rCSTgYs8FB_Ua6PZKGA2Mc2Y10JSHJWiGl177WyEqKIjJcfmgOS1aiGfOqIDd9fK513ssMb8NpLwYDfV6rX6wn7R4t3_gMoah1ZgBI55sjPSNLxVczF0rjXeWKubnQxIyPNBnaiKzSQRlWJ_7WAF8boa1_Tjjd9MwZhbdf8yncmhvE-QZTOtDokFZEJ73S7ZAE14cTwkckaLXNujRxj9xnB5dyvRAvwQ');"></div>
-                    <div class="p-6 flex flex-col grow">
-                        <h3 class="text-text-light text-xl font-bold mb-2">ADVANCED ROUTING PROTOCOL ENGINE</h3>
-                        <p class="text-text-muted text-sm leading-relaxed mb-4 line-clamp-3 font-body">
-                            High-performance custom routing engine built with Rust and PostGIS pgRouting. Optimized for
-                            multi-modal transport in dense urban and complex environments.
-                        </p>
-                        <div class="mt-auto pt-4 flex items-center justify-between border-t border-border-dark">
-                            <div class="flex gap-2">
-                                <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">RUST</span>
-                                <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">POSTGIS</span>
-                            </div>
-                            <button class="text-secondary-accent hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined">code</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
+                <div class="p-6 flex flex-col grow">
+                    <h3 class="text-text-light text-xl font-bold mb-2">RastLess</h3>
+                    <p class="text-text-muted text-sm leading-relaxed mb-4 line-clamp-3 font-body">
+                        An award-winning serverless cloud solution to visualize and analyze spatio‑temporal raster data.
+                    </p>
 
-                <!-- Project 3 -->
-                <div class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
-                    <div class="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500"
-                         style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDM1W2QmztNfKKE4XqAPmauFzJ1T7P5q5o7nORM8e4-MokN4qEyeUK0CVV7g1mE7_W-g_4Sz7NAiWzFOKmxReW3N3VbiFeWCHHfuaR-UqpSgdM1tIMY367BnN8f_45deRMiOhlyavTbZbPrgRJ8yQcoBG1tfozoXm7go5E5OqwO-hsope5WQmhA3bUP4QrpeMYRz2sH61z2t0KsOaKczW0qLmFkmr1uQBtN-uAw1S0jZUgi6L4nUhxBo-94-s5A9_5wt03jN3i5J10');"></div>
-                    <div class="p-6 flex flex-col grow">
-                        <h3 class="text-text-light text-xl font-bold mb-2">LIDAR POINT CLOUD VISUALIZATION UNIT</h3>
-                        <p class="text-text-muted text-sm leading-relaxed mb-4 line-clamp-3 font-body">
-                            WebGL-based viewer for massive point cloud datasets. Utilizes Potree and three.js to render
-                            billions of points in the browser with minimal latency.
-                        </p>
-                        <div class="mt-auto pt-4 flex items-center justify-between border-t border-border-dark">
-                            <div class="flex gap-2">
-                                <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">WEBGL</span>
-                                <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">PYTHON</span>
-                            </div>
-                            <button class="text-secondary-accent hover:text-primary transition-colors">
-                                <span class="material-symbols-outlined">launch</span>
-                            </button>
+                    <div class="mt-auto pt-4 flex items-center justify-between border-t border-border-dark">
+                        <div class="flex gap-2">
+                            <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">SERVERLESS</span>
+                            <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">RASTER</span>
+                            <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">AWS</span>
                         </div>
+
+                        <a href="/projects/rastless/" class="text-secondary-accent hover:text-primary transition-colors"
+                           aria-label="Open RastLess blog entry">
+                            <span class="material-symbols-outlined">launch</span>
+                        </a>
                     </div>
                 </div>
             </div>
-            <div class="mt-8 text-center md:hidden">
-                <a class="inline-flex items-center text-secondary-accent hover:text-primary transition-colors font-bold uppercase tracking-wider"
-                   href="#">
-                    View All Entries <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>
+
+            <!-- Project 2 -->
+            <div class="group flex flex-col bg-surface-dark rounded-xl overflow-hidden border border-border-dark hover:border-primary hover:shadow-lg hover:shadow-primary/20 transition-all duration-300">
+                <a href="/projects/aws-al2023-gdal/" class="block">
+                    <div class="h-48 w-full bg-cover bg-center group-hover:scale-105 transition-transform duration-500 bg-white"
+                         style="background-image: url('/images/projects/aws-gdal/gdal_loves_docker.png');"></div>
                 </a>
+
+                <div class="p-6 flex flex-col grow">
+                    <h3 class="text-text-light text-xl font-bold mb-2">GDAL From Scratch</h3>
+                    <p class="text-text-muted text-sm leading-relaxed mb-4 line-clamp-3 font-body">
+                        My attempt to build and compile a minimal GDAL for AWS Lambda using Amazon Linux 2023 (AL2023) runtime.
+                    </p>
+
+                    <div class="mt-auto pt-4 flex items-center justify-between border-t border-border-dark">
+                        <div class="flex gap-2">
+                            <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">AWS Lambda</span>
+                            <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">GDAL</span>
+                            <span class="text-xs text-text-muted font-mono bg-border-dark px-2 py-1 rounded-sm border border-border-dark">DOCKER</span>
+                        </div>
+
+                        <a href="/projects/aws-al2023-gdal/" class="text-secondary-accent hover:text-primary transition-colors"
+                           aria-label="Open RastLess blog entry">
+                            <span class="material-symbols-outlined">launch</span>
+                        </a>
+                    </div>
+                </div>
             </div>
+
+        </div>
+        <!--            <div class="mt-8 text-center md:hidden">-->
+        <!--                <a class="inline-flex items-center text-secondary-accent hover:text-primary transition-colors font-bold uppercase tracking-wider"-->
+        <!--                   href="#">-->
+        <!--                    View All Entries <span class="material-symbols-outlined text-lg ml-1">arrow_forward</span>-->
+        <!--                </a>-->
+        <!--            </div>-->
     </div>
 </section>
 
 <!-- Contact Section -->
 <section class="py-20 bg-background-dark border-t border-border-dark" id="contact">
     <div class="container mx-auto px-4 md:px-10 max-w-[1200px]">
-            <div class="bg-surface-dark rounded-2xl p-8 md:p-12 border border-border-dark shadow-lg shadow-secondary-accent/5">
-                <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                    <div class="flex flex-col justify-center">
-                        <h2 class="text-text-light text-3xl font-bold mb-4">Let's Chat</h2>
-                        <p class="text-text-muted text-base mb-8 font-body">
-                            Are you interested in geospatial innovation? <br>Whether you have a
-                            project in mind or just want to discuss the latest geospatial tech, I'd love to hear from
-                            you.
-                        </p>
-                        <div class="flex flex-col gap-6">
-                            <a class="flex items-center gap-4 text-text-light group" href="mailto:hello@geointel.dev">
-                                <div class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center group-hover:bg-primary transition-colors text-secondary-accent group-hover:text-background-dark shadow-md shadow-secondary-accent/10 group-hover:shadow-primary/20">
-                                    <span class="material-symbols-outlined">mail</span>
-                                </div>
-                                <span class="text-lg font-medium group-hover:text-primary transition-colors">marcel@siegmann.dev</span>
-                            </a>
-                            <div class="flex items-center gap-4 text-text-light">
-                                <div class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center text-secondary-accent shadow-md shadow-secondary-accent/10">
-                                    <span class="material-symbols-outlined">location_on</span>
-                                </div>
-                                <span class="text-lg font-medium">Berlin, Germany</span>
+        <div class="bg-surface-dark rounded-2xl p-8 md:p-12 border border-border-dark shadow-lg shadow-secondary-accent/5">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="flex flex-col justify-center">
+                    <h2 class="text-text-light text-3xl font-bold mb-4">Let's Chat</h2>
+                    <p class="text-text-muted text-base mb-8 font-body">
+                        Are you interested in geospatial innovation? <br>Whether you have a
+                        project in mind or just want to discuss the latest geospatial tech, I'd love to hear from
+                        you.
+                    </p>
+                    <div class="flex flex-col gap-6">
+                        <a class="flex items-center gap-4 text-text-light group" href="mailto:hello@geointel.dev">
+                            <div class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center group-hover:bg-primary transition-colors text-secondary-accent group-hover:text-background-dark shadow-md shadow-secondary-accent/10 group-hover:shadow-primary/20">
+                                <span class="material-symbols-outlined">mail</span>
                             </div>
-                        </div>
-                        <div class="flex gap-4 mt-10">
-                            <a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center text-secondary-accent hover:bg-primary hover:text-background-dark hover:-translate-y-1 transition-all shadow-md shadow-secondary-accent/10 hover:shadow-primary/20"
-                               href="https://github.com/MarcelCode" target="_blank">
-                                <img src="/logos/github-mark-white.svg" alt="GitHub" class="w-6 h-6">
-                            </a>
-                            <a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center text-secondary-accent hover:bg-primary hover:text-background-dark hover:-translate-y-1 transition-all shadow-md shadow-secondary-accent/10 hover:shadow-primary/20"
-                               href="https://www.linkedin.com/in/siegmann-geospatial/" target="_blank">
-                                <img src="/logos/InBug-White.png" alt="LinkedIn" class="w-6 h-6">
-                            </a>
-                            <a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center text-secondary-accent hover:bg-primary hover:text-background-dark hover:-translate-y-1 transition-all shadow-md shadow-secondary-accent/10 hover:shadow-primary/20"
-                               href="http://eomap.com" target="_blank">
-                                <span class="material-symbols-outlined text-white text-[2rem]">work</span>
-                            </a>
+                            <span class="text-lg font-medium group-hover:text-primary transition-colors">marcel@siegmann.dev</span>
+                        </a>
+                        <div class="flex items-center gap-4 text-text-light">
+                            <div class="w-10 h-10 rounded-lg bg-border-dark flex items-center justify-center text-secondary-accent shadow-md shadow-secondary-accent/10">
+                                <span class="material-symbols-outlined">location_on</span>
+                            </div>
+                            <span class="text-lg font-medium">Berlin, Germany</span>
                         </div>
                     </div>
-                    <form class="flex flex-col gap-4">
-                        <div class="flex flex-col gap-1">
-                            <label class="text-text-light text-sm font-medium ml-1" for="name">Name</label>
-                            <input class="h-12 w-full rounded-lg bg-background-dark border border-border-dark text-text-light px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body placeholder-text-muted"
-                                   id="name" placeholder="Your Name" type="text"/>
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <label class="text-text-light text-sm font-medium ml-1" for="email">Email</label>
-                            <input class="h-12 w-full rounded-lg bg-background-dark border border-border-dark text-text-light px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body placeholder-text-muted"
-                                   id="email" placeholder="your.email@example.com" type="email"/>
-                        </div>
-                        <div class="flex flex-col gap-1">
-                            <label class="text-text-light text-sm font-medium ml-1" for="message">Message</label>
-                            <textarea
-                                    class="w-full rounded-lg bg-background-dark border border-border-dark text-text-light p-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body placeholder-text-muted resize-none"
-                                    id="message" placeholder="Tell me about you project..." rows="4"></textarea>
-                        </div>
-                        <button class="mt-2 h-12 w-full bg-primary hover:bg-primary/80 text-background-dark font-bold rounded-lg transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,255,192,0.4)]"
-                                type="button">
-                            <span>Send Message</span>
-                            <span class="material-symbols-outlined text-sm">send</span>
-                        </button>
-                    </form>
+                    <div class="flex gap-4 mt-10">
+                        <a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center text-secondary-accent hover:bg-primary hover:text-background-dark hover:-translate-y-1 transition-all shadow-md shadow-secondary-accent/10 hover:shadow-primary/20"
+                           href="https://github.com/MarcelCode" target="_blank">
+                            <img src="/logos/github-mark-white.svg" alt="GitHub" class="w-6 h-6">
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center text-secondary-accent hover:bg-primary hover:text-background-dark hover:-translate-y-1 transition-all shadow-md shadow-secondary-accent/10 hover:shadow-primary/20"
+                           href="https://www.linkedin.com/in/siegmann-geospatial/" target="_blank">
+                            <img src="/logos/InBug-White.png" alt="LinkedIn" class="w-6 h-6">
+                        </a>
+                        <a class="w-10 h-10 rounded-full bg-border-dark flex items-center justify-center text-secondary-accent hover:bg-primary hover:text-background-dark hover:-translate-y-1 transition-all shadow-md shadow-secondary-accent/10 hover:shadow-primary/20"
+                           href="http://eomap.com" target="_blank">
+                            <span class="material-symbols-outlined text-white text-[2rem]">work</span>
+                        </a>
+                    </div>
                 </div>
+                <form class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-1">
+                        <label class="text-text-light text-sm font-medium ml-1" for="name">Name</label>
+                        <input class="h-12 w-full rounded-lg bg-background-dark border border-border-dark text-text-light px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body placeholder-text-muted"
+                               id="name" placeholder="Your Name" type="text"/>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-text-light text-sm font-medium ml-1" for="email">Email</label>
+                        <input class="h-12 w-full rounded-lg bg-background-dark border border-border-dark text-text-light px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body placeholder-text-muted"
+                               id="email" placeholder="your.email@example.com" type="email"/>
+                    </div>
+                    <div class="flex flex-col gap-1">
+                        <label class="text-text-light text-sm font-medium ml-1" for="message">Message</label>
+                        <textarea
+                                class="w-full rounded-lg bg-background-dark border border-border-dark text-text-light p-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body placeholder-text-muted resize-none"
+                                id="message" placeholder="Tell me about you project..." rows="4"></textarea>
+                    </div>
+                    <button class="mt-2 h-12 w-full bg-primary hover:bg-primary/80 text-background-dark font-bold rounded-lg transition-colors flex items-center justify-center gap-2 shadow-[0_0_20px_rgba(0,255,192,0.4)]"
+                            type="button">
+                        <span>Send Message</span>
+                        <span class="material-symbols-outlined text-sm">send</span>
+                    </button>
+                </form>
             </div>
+        </div>
     </div>
 </section>
 

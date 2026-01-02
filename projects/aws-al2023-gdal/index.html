@@ -1,0 +1,236 @@
+<!doctype html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+          content="Compiling GDAL for Amazon Linux 2023 - optimized Docker images for AWS Lambda serverless deployments.">
+    <link href="/src/style/style.css" rel="stylesheet">
+    <title>GDAL for Amazon Linux 2023 | Marcel Siegmann</title>
+</head>
+<body class="bg-background-dark text-text-light font-display overflow-x-hidden">
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 z-50 w-full border-b border-border-dark bg-surface-dark/90 backdrop-blur-md">
+    <div class="px-4 md:px-10 py-5 flex items-center justify-between max-w-[1400px] mx-auto">
+        <div class="flex items-center text-white">
+            <h2 class="text-text-light text-xl font-bold leading-tight tracking-[-0.015em]">
+                <a href="/" class="hover:text-primary transition-colors">Marcel Siegmann</a>
+            </h2>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider"
+               href="/#about">About</a>
+            <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider"
+               href="/#skills">Skills</a>
+            <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider"
+               href="/#projects">Projects</a>
+            <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider"
+               href="/#contact">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-text-light cursor-pointer">menu</span>
+        </div>
+    </div>
+</nav>
+
+<!-- Article Header -->
+<header class="relative w-full pt-32 pb-16 bg-background-dark border-b border-border-dark">
+    <div class="container mx-auto px-4 md:px-10 max-w-[900px]">
+        <!-- Back button -->
+        <a href="/#projects"
+           class="inline-flex items-center gap-2 text-secondary-accent hover:text-primary transition-colors mb-8 group">
+            <span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+            <span class="font-bold uppercase tracking-wider text-sm">Back to Projects</span>
+        </a>
+
+        <!-- Title and metadata -->
+        <div class="flex flex-col gap-4">
+            <div class="flex flex-wrap gap-2">
+                <span class="text-xs text-text-muted font-mono bg-border-dark px-3 py-1 rounded-sm border border-border-dark uppercase">AWS Lambda</span>
+                <span class="text-xs text-text-muted font-mono bg-border-dark px-3 py-1 rounded-sm border border-border-dark uppercase">GDAL</span>
+                <span class="text-xs text-text-muted font-mono bg-border-dark px-3 py-1 rounded-sm border border-border-dark uppercase">Docker</span>
+            </div>
+
+            <h1 class="text-text-light text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
+                GDAL for Amazon Linux 2023
+            </h1>
+
+            <p class="text-text-muted text-xl font-normal leading-relaxed">
+                Custom-compiled GDAL for AWS Lambda with optimized cold start times and minimal Docker image size.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 text-sm text-text-muted pt-2">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary-accent text-base">calendar_today</span>
+                    <span>2023</span>
+                </div>
+                <span class="text-border-dark">•</span>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary-accent text-base">code</span>
+                    <span>Status: Open Source</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Article Content -->
+<article class="py-16 bg-background-dark">
+    <div class="container mx-auto px-4 md:px-10 max-w-[900px]">
+
+        <!-- The Challenge -->
+        <section class="mb-16">
+            <div class="bg-surface-dark rounded-xl p-8 border border-border-dark shadow-lg shadow-primary/5">
+                <h2 class="text-text-light text-2xl font-bold mb-4 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-3xl">rocket_launch</span>
+                    The Challenge: GDAL in Serverless Golang
+                </h2>
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    I wanted to try using GDAL in a Golang application with the <a
+                        href="https://github.com/airbusgeo/godal" target="_blank"
+                        class="text-primary underline hover:no-underline">Airbus godal library</a>
+                    and deploy it to AWS Lambda as a Docker container. I had read that cold start times are
+                    significantly reduced when using AWS OS-based Docker containers because the caching of these layers
+                    is more effective.
+                </p>
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    I had an example for GDAL using an older Amazon Linux 2 Docker image, but I really wanted to compile
+                    it myself to squeeze out the last milliseconds of speed. The problem was that the package manager
+                    changed from <code class="text-primary font-mono text-sm">yum</code> to <code
+                        class="text-primary font-mono text-sm">dnf</code>,
+                    so I could not simply copy the Docker YAML and replace the base Docker image.
+                </p>
+                <p class="text-text-muted text-base leading-relaxed font-body">
+                    In times before AI, I spent months working through countless nights to make it work, and I learned a
+                    great deal about compiling GDAL, its dependencies, and their interplay. I removed everything that
+                    was not needed for my use case to make the Docker image as small as possible, thereby speeding up
+                    cold start times.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Result -->
+        <section class="mb-16">
+            <h2 class="text-text-light text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary-accent text-3xl">check_circle</span>
+                The Result
+            </h2>
+
+            <div class="prose prose-invert max-w-none mb-6">
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    The final working result is available on GitHub: <a href="https://github.com/MarcelCode/al2023-gdal"
+                                                                        target="_blank"
+                                                                        class="text-primary underline hover:no-underline">al2023-gdal</a>
+                </p>
+                <p class="text-text-muted text-base leading-relaxed font-body">
+                    This repository contains a fully functional GDAL compilation for Amazon Linux 2023, optimized for
+                    AWS Lambda deployments.
+                    It includes all the necessary build configurations and stripped-down dependencies to create minimal
+                    Docker images with fast cold start times.
+                </p>
+            </div>
+
+            <div class="bg-surface-dark rounded-xl p-6 border-l-4 border-primary">
+                <h3 class="text-text-light font-bold mb-3 text-lg">Key Features</h3>
+                <ul class="space-y-2">
+                    <li class="flex items-start gap-2 text-text-muted text-base font-body">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Custom GDAL compilation optimized for Amazon Linux 2023</span>
+                    </li>
+                    <li class="flex items-start gap-2 text-text-muted text-base font-body">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Compatible with AWS Lambda Docker containers for better layer caching</span>
+                    </li>
+                    <li class="flex items-start gap-2 text-text-muted text-base font-body">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Minimal dependencies for reduced image size and faster cold starts</span>
+                    </li>
+                    <li class="flex items-start gap-2 text-text-muted text-base font-body">
+                        <span class="text-primary mt-1">•</span>
+                        <span>Works seamlessly with the Airbus godal library for Golang</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Lessons Learned -->
+        <section class="mb-16">
+            <h2 class="text-text-light text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl">school</span>
+                What I Learned
+            </h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    This project was a deep dive into the internals of geospatial software compilation. Through trial
+                    and error over many months,
+                    I gained hands-on expertise in:
+                </p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-surface-dark rounded-lg p-5 border border-border-dark">
+                        <h4 class="text-primary font-bold mb-2">GDAL Dependencies</h4>
+                        <p class="text-text-muted text-sm font-body">Understanding the complex web of GDAL's
+                            dependencies and how to compile them from source.</p>
+                    </div>
+                    <div class="bg-surface-dark rounded-lg p-5 border border-border-dark">
+                        <h4 class="text-primary font-bold mb-2">Build Optimization</h4>
+                        <p class="text-text-muted text-sm font-body">Learning which dependencies are essential and which
+                            can be removed for specific use cases.</p>
+                    </div>
+                    <div class="bg-surface-dark rounded-lg p-5 border border-border-dark">
+                        <h4 class="text-primary font-bold mb-2">Amazon Linux Migration</h4>
+                        <p class="text-text-muted text-sm font-body">Navigating the changes from Amazon Linux 2 to 2023,
+                            including the yum to dnf transition.</p>
+                    </div>
+                    <div class="bg-surface-dark rounded-lg p-5 border border-border-dark">
+                        <h4 class="text-primary font-bold mb-2">Docker Optimization</h4>
+                        <p class="text-text-muted text-sm font-body">Techniques for minimizing Docker image size and
+                            improving Lambda cold start performance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</article>
+
+<!-- Contact Section -->
+<section class="py-16 bg-surface-dark border-t border-border-dark">
+    <div class="container mx-auto px-4 md:px-10 max-w-[900px]">
+        <div class="text-center">
+            <h2 class="text-text-light text-2xl font-bold mb-4">Need Help with GDAL or Serverless Geospatial?</h2>
+            <p class="text-text-muted mb-8 font-body">If you're facing similar challenges with GDAL compilation or
+                serverless geospatial deployments, feel free to reach out.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="https://github.com/MarcelCode/al2023-gdal" target="_blank"
+                   class="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/80 text-background-dark font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(0,255,192,0.4)]">
+                    <span class="material-symbols-outlined">code</span>
+                    <span>View on GitHub</span>
+                </a>
+                <a href="/#contact"
+                   class="inline-flex items-center gap-2 px-8 py-4 bg-border-dark hover:bg-surface-dark border border-border-dark text-secondary-accent font-bold rounded-lg transition-all">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span>Contact</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-background-dark border-t border-border-dark py-8">
+    <div class="container mx-auto px-10 text-center">
+        <p class="text-text-muted text-sm">© 2025 Marcel Siegmann. All rights reserved.</p>
+        <p class="text-text-muted text-xs mt-2">Designed with geospatial precision.</p>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center my-4 text-xs">
+        <a href="/legal/" class="text-text-muted hover:text-primary transition-colors">Legal Notice</a>
+        <span class="hidden sm:inline text-border-dark">•</span>
+        <a href="/privacy/" class="text-text-muted hover:text-primary transition-colors">Privacy Policy</a>
+        <span class="hidden sm:inline text-border-dark">•</span>
+        <a href="/disclaimer/" class="text-text-muted hover:text-primary transition-colors">Disclaimer</a>
+    </div>
+</footer>
+
+</body>
+</html>

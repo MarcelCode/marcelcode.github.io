@@ -1,0 +1,350 @@
+<!doctype html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="RastLess - serverless architecture for visualizing and analyzing large-scale spatio-temporal raster data in cloud environments.">
+    <link href="/src/style/style.css" rel="stylesheet">
+    <title>RastLess | Marcel Siegmann</title>
+</head>
+<body class="bg-background-dark text-text-light font-display overflow-x-hidden">
+
+<!-- Navigation -->
+<nav id="navbar" class="fixed top-0 z-50 w-full border-b border-border-dark bg-surface-dark/90 backdrop-blur-md">
+    <div class="px-4 md:px-10 py-5 flex items-center justify-between max-w-[1400px] mx-auto">
+        <div class="flex items-center text-white">
+            <h2 class="text-text-light text-xl font-bold leading-tight tracking-[-0.015em]">
+                <a href="/" class="hover:text-primary transition-colors">Marcel Siegmann</a>
+            </h2>
+        </div>
+        <div class="hidden md:flex items-center gap-8">
+            <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider" href="/#about">About</a>
+            <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider" href="/#skills">Skills</a>
+            <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider" href="/#projects">Projects</a>
+            <a class="text-text-light hover:text-primary text-sm font-bold transition-colors uppercase tracking-wider" href="/#contact">Contact</a>
+        </div>
+        <div class="md:hidden">
+            <span class="material-symbols-outlined text-text-light cursor-pointer">menu</span>
+        </div>
+    </div>
+</nav>
+
+<!-- Article Header -->
+<header class="relative w-full pt-32 pb-16 bg-background-dark border-b border-border-dark">
+    <div class="container mx-auto px-4 md:px-10 max-w-[900px]">
+        <!-- Back button -->
+        <a href="/#projects" class="inline-flex items-center gap-2 text-secondary-accent hover:text-primary transition-colors mb-8 group">
+            <span class="material-symbols-outlined text-lg group-hover:-translate-x-1 transition-transform">arrow_back</span>
+            <span class="font-bold uppercase tracking-wider text-sm">Back to Projects</span>
+        </a>
+
+        <!-- Title and metadata -->
+        <div class="flex flex-col gap-4">
+            <div class="flex flex-wrap gap-2">
+                <span class="text-xs text-text-muted font-mono bg-border-dark px-3 py-1 rounded-sm border border-border-dark uppercase">Serverless</span>
+                <span class="text-xs text-text-muted font-mono bg-border-dark px-3 py-1 rounded-sm border border-border-dark uppercase">RASTER</span>
+                <span class="text-xs text-text-muted font-mono bg-border-dark px-3 py-1 rounded-sm border border-border-dark uppercase">AWS</span>
+            </div>
+
+            <h1 class="text-text-light text-4xl md:text-5xl font-black leading-tight tracking-[-0.033em]">
+                RastLess
+            </h1>
+
+            <p class="text-text-muted text-xl font-normal leading-relaxed">
+                A serverless architecture for efficient visualization and analysis of large-scale spatio-temporal raster data in cloud environments.
+            </p>
+
+            <div class="flex flex-wrap items-center gap-4 text-sm text-text-muted pt-2">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary-accent text-base">calendar_today</span>
+                    <span>December 2022</span>
+                </div>
+                <span class="text-border-dark">•</span>
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-outlined text-secondary-accent text-base">code</span>
+                    <span>Status: In production</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Article Content -->
+<article class="py-16 bg-background-dark">
+    <div class="container mx-auto px-4 md:px-10 max-w-[900px]">
+
+        <!-- Introduction -->
+        <section class="mb-16">
+            <div class="bg-surface-dark rounded-xl p-8 border border-border-dark shadow-lg shadow-primary/5">
+                <h2 class="text-text-light text-2xl font-bold mb-4 flex items-center gap-3">
+                    <span class="material-symbols-outlined text-primary text-3xl">lightbulb</span>
+                    Introduction
+                </h2>
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    RastLess is a cloud computing innovation I developed at EOMAP for processing and visualizing large volumes of Earth observation raster data.
+                    The project addresses a fundamental challenge in the growing Earth observation market: how to efficiently process massive amounts of satellite imagery
+                    without the prohibitive costs of traditional server infrastructure.
+                </p>
+                <p class="text-text-muted text-base leading-relaxed font-body">
+                    In December 2022, RastLess was recognized as a double winner at the Space Awards in Rome during the Copernicus Masters celebration.
+                    The innovation won both the "Regional Prize Bavaria" by AZO and the "Frontier Tech Challenge" by the European Space Agency ESA,
+                    validating its potential to transform how Earth observation data is processed in the cloud.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Challenge -->
+        <section class="mb-16">
+            <h2 class="text-text-light text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary-accent text-3xl">crisis_alert</span>
+                The Challenge
+            </h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    For the growing Earth observation market, efficient processing of large raster data volumes in various resolutions is essential.
+                    As satellite imagery becomes more accessible and datasets grow larger, the traditional approach of running servers continuously becomes
+                    increasingly expensive and inefficient.
+                </p>
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    As I explained during the competition: "Continuously running servers are one of the most expensive cloud workloads, and low performance
+                    in accessing multiple data sources a real pain for users." Organizations working with Earth observation data face a difficult choice—either
+                    maintain costly infrastructure that runs 24/7, or accept slow performance when processing large datasets.
+                </p>
+                <p class="text-text-muted text-base leading-relaxed font-body">
+                    The challenge was clear: find a way to process hundreds or thousands of satellite images quickly and efficiently, while dramatically
+                    reducing infrastructure costs. This meant rethinking the entire approach to how raster data is stored, accessed, and processed in the cloud.
+                </p>
+            </div>
+        </section>
+
+        <!-- The Innovation -->
+        <section class="mb-16">
+            <h2 class="text-text-light text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl">engineering</span>
+                The Innovation
+            </h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-text-muted text-base leading-relaxed font-body mb-6">
+                    In contrast to existing Data Cube applications, RastLess is a serverless solution for visualizing and analyzing distributed raster data.
+                    Instead of maintaining servers that run continuously, the system only uses computing resources when they're actually. This fundamentally changes the cost structure from fixed to variable, directly tied to actual usage.
+                </p>
+
+                <h3 class="text-text-light text-xl font-bold mb-4 mt-8">Key Capabilities</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                    <div class="bg-surface-dark rounded-lg p-5 border border-border-dark">
+                        <h4 class="text-primary font-bold mb-2">Massive parallel processing</h4>
+                        <p class="text-text-muted text-sm font-body">RastLess can process hundreds or thousands of satellite images simultaneously within seconds,
+                        enabling rapid analysis of large Earth observation datasets.</p>
+                    </div>
+                    <div class="bg-surface-dark rounded-lg p-5 border border-border-dark">
+                        <h4 class="text-primary font-bold mb-2">Flexible data handling</h4>
+                        <p class="text-text-muted text-sm font-body">The system handles all sorts of projections and resolutions, working seamlessly with
+                        distributed data sources without requiring extensive preprocessing.</p>
+                    </div>
+                    <div class="bg-surface-dark rounded-lg p-5 border border-border-dark">
+                        <h4 class="text-primary font-bold mb-2">Cost efficiency</h4>
+                        <p class="text-text-muted text-sm font-body">By eliminating always-on servers, RastLess dramatically cuts infrastructure costs while
+                        maintaining high performance for data access and analysis.</p>
+                    </div>
+                    <div class="bg-surface-dark rounded-lg p-5 border border-border-dark">
+                        <h4 class="text-primary font-bold mb-2">Improved user experience</h4>
+                        <p class="text-text-muted text-sm font-body">Fast access to multiple data sources solves the performance pain points that have
+                        traditionally plagued Earth observation data platforms.</p>
+                    </div>
+                </div>
+
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    The development of RastLess was supported by Professor Adam Roe of <a href="https://code.berlin" target="_blank" class="text-primary underline hover:no-underline">CODE University Berlin</a> and <a href="https://code-berlin.de/" target="_blank" class="text-primary underline hover:no-underline">EOMAP's</a> software team. Together, we focused on
+                    solving the real pain points of analyzing raster geo-data through a completely reimagined approach to cloud computing architecture.
+                </p>
+            </div>
+        </section>
+
+                <!-- Impact and Results -->
+        <section class="mb-16">
+            <h2 class="text-text-light text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl">trending_up</span>
+                Impact and Results
+            </h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                <div class="bg-surface-dark rounded-xl p-6 border border-border-dark text-center">
+                    <div class="text-4xl font-black text-primary mb-2">Seconds</div>
+                    <div class="text-text-muted text-sm font-body">Process hundreds or thousands of images</div>
+                </div>
+                <div class="bg-surface-dark rounded-xl p-6 border border-border-dark text-center">
+                    <div class="text-4xl font-black text-secondary-accent mb-2">Flexible</div>
+                    <div class="text-text-muted text-sm font-body">All projections and resolutions supported</div>
+                </div>
+                <div class="bg-surface-dark rounded-xl p-6 border border-border-dark text-center">
+                    <div class="text-4xl font-black text-primary mb-2">Reduced</div>
+                    <div class="text-text-muted text-sm font-body">Infrastructure costs dramatically lowered</div>
+                </div>
+            </div>
+
+            <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                RastLess demonstrates that serverless architectures can effectively address the unique challenges of Earth observation data processing.
+                By eliminating the need for continuously running servers, the system provides a new approach to managing the growing volumes of satellite
+                imagery while keeping operational costs under control.
+            </p>
+            <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                The innovation has particular significance for the Copernicus program and the broader Earth observation community. As datasets continue to grow
+                and more organizations seek to leverage satellite imagery, solutions like RastLess offer a path forward that balances performance, flexibility,
+                and cost efficiency.
+            </p>
+            <p class="text-text-muted text-base leading-relaxed font-body">
+                The recognition from ESA and AZO at the Copernicus Masters validates the potential of this approach to contribute to the future of Earth observation
+                data infrastructure. The system continues to be developed and refined at EOMAP, serving real-world applications and informing best practices for
+                serverless geospatial data processing.
+            </p>
+        </section>
+
+        <!-- Recognition and Awards -->
+        <section class="mb-16">
+            <h2 class="text-text-light text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary-accent text-3xl">emoji_events</span>
+                Copernicus Masters 2022
+            </h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-text-muted text-base leading-relaxed font-body mb-6">
+                    On December 1st, 2022, at the Space Awards in Rome, RastLess was recognized as a double winner during the Copernicus Masters celebration.
+                    The innovation received two prestigious awards, highlighting its potential to transform Earth observation data processing in cloud environments.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-surface-dark rounded-lg p-6 border-l-4 border-primary">
+                        <h3 class="text-text-light font-bold mb-3 text-lg">Regional Prize Bavaria</h3>
+                        <p class="text-text-muted text-sm font-body mb-2">Awarded by AZO</p>
+                        <p class="text-text-muted text-base leading-relaxed font-body">
+                            Recognition for outstanding innovation in the Bavarian space and Earth observation sector, acknowledging RastLess's contribution
+                            to advancing cloud computing technologies for geospatial applications.
+                        </p>
+                    </div>
+                    <div class="bg-surface-dark rounded-lg p-6 border-l-4 border-secondary-accent">
+                        <h3 class="text-text-light font-bold mb-3 text-lg">Frontier Tech Challenge</h3>
+                        <p class="text-text-muted text-sm font-body mb-2">Awarded by the European Space Agency (ESA)</p>
+                        <p class="text-text-muted text-base leading-relaxed font-body">
+                            ESA's recognition of groundbreaking technological approaches in Earth observation, highlighting the innovation's potential
+                            to improve Copernicus cloud productivity and reduce infrastructure costs.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-surface-dark rounded-lg p-6 border border-border-dark">
+                    <p class="text-text-muted text-base leading-relaxed font-body italic">
+                        "EOMAP demonstrated a unique proposition to introduce new ways of EO data processing using serverless architectures.
+                        This can result in cutting infrastructure costs and improving Copernicus cloud productivity."
+                    </p>
+                    <p class="text-text-muted text-sm mt-3">
+                        — Anna Burzykowska, Copernicus Innovation Officer, European Space Agency
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Presentation -->
+        <section class="mb-16">
+            <h2 class="text-text-light text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-primary text-3xl">play_circle</span>
+                Cloud Native Geospatial 2022
+            </h2>
+
+            <div class="prose prose-invert max-w-none">
+                <p class="text-text-muted text-base leading-relaxed font-body mb-6">
+                    I presented RastLess at the Cloud Native Geospatial event in 2022, introducing the concept and demonstrating how serverless architectures
+                    can be applied to Earth observation data processing challenges.
+                </p>
+
+                <div class="rounded-xl overflow-hidden border border-border-dark bg-surface-dark">
+                    <div class="relative" style="padding-bottom: 56.25%; height: 0;">
+                        <iframe
+                            src="https://www.youtube.com/embed/mYqUMV9ESU4"
+                            title="RastLess presentation at Cloud Native Geospatial 2022"
+                            frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowfullscreen
+                            class="absolute top-0 left-0 w-full h-full">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Background -->
+        <section class="mb-16">
+            <h2 class="text-text-light text-3xl font-bold mb-6 flex items-center gap-3">
+                <span class="material-symbols-outlined text-secondary-accent text-3xl">groups</span>
+                Project Background
+            </h2>
+
+            <div class="prose prose-invert max-w-none">
+                <p class="text-text-muted text-base leading-relaxed font-body mb-4">
+                    RastLess was developed during my time as a software engineer at EOMAP, a company specializing in Earth observation and water quality monitoring.
+                    The project emerged from real-world needs in processing large-scale satellite imagery for environmental monitoring applications.
+                </p>
+
+                <div class="bg-surface-dark rounded-lg p-6 border border-border-dark mb-6">
+                    <h3 class="text-primary text-lg font-bold mb-4">Development Team</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start gap-2 text-text-muted text-sm font-body">
+                            <span class="text-primary mt-1">•</span>
+                            <span><strong>Marcel Siegmann</strong> — Lead developer and innovator, software engineer at EOMAP</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-text-muted text-sm font-body">
+                            <span class="text-primary mt-1">•</span>
+                            <span><strong>Professor Adam Roe</strong> — Academic advisor from CODE University Berlin</span>
+                        </li>
+                        <li class="flex items-start gap-2 text-text-muted text-sm font-body">
+                            <span class="text-primary mt-1">•</span>
+                            <span><strong>EOMAP Software Team</strong> — Supporting development and integration</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <p class="text-text-muted text-base leading-relaxed font-body">
+                    The collaboration between industry expertise at EOMAP and academic guidance from CODE University Berlin created an environment where
+                    innovative approaches to longstanding infrastructure challenges could be explored and validated in production settings.
+                </p>
+            </div>
+        </section>
+
+    </div>
+</article>
+
+<!-- Contact Section -->
+<section class="py-16 bg-surface-dark border-t border-border-dark">
+    <div class="container mx-auto px-4 md:px-10 max-w-[900px]">
+        <div class="text-center">
+            <h2 class="text-text-light text-2xl font-bold mb-4">Questions or Collaboration</h2>
+            <p class="text-text-muted mb-8 font-body">For questions about this work or to discuss similar challenges in geospatial data processing, feel free to reach out.</p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <a href="/#contact" class="inline-flex items-center gap-2 px-8 py-4 bg-primary hover:bg-primary/80 text-background-dark font-bold rounded-lg transition-all shadow-[0_0_20px_rgba(0,255,192,0.4)]">
+                    <span class="material-symbols-outlined">mail</span>
+                    <span>Contact</span>
+                </a>
+                <a href="/#projects" class="inline-flex items-center gap-2 px-8 py-4 bg-border-dark hover:bg-surface-dark border border-border-dark text-secondary-accent font-bold rounded-lg transition-all">
+                    <span class="material-symbols-outlined">arrow_back</span>
+                    <span>View More Projects</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-background-dark border-t border-border-dark py-8">
+    <div class="container mx-auto px-10 text-center">
+        <p class="text-text-muted text-sm">© 2025 Marcel Siegmann. All rights reserved.</p>
+        <p class="text-text-muted text-xs mt-2">Designed with geospatial precision.</p>
+    </div>
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center my-4 text-xs">
+        <a href="/legal/" class="text-text-muted hover:text-primary transition-colors">Legal Notice</a>
+        <span class="hidden sm:inline text-border-dark">•</span>
+        <a href="/privacy/" class="text-text-muted hover:text-primary transition-colors">Privacy Policy</a>
+        <span class="hidden sm:inline text-border-dark">•</span>
+        <a href="/disclaimer/" class="text-text-muted hover:text-primary transition-colors">Disclaimer</a>
+    </div>
+</footer>
+
+</body>
+</html>
