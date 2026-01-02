@@ -9,9 +9,9 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        legal: 'legal.html',
-        privacy: 'privacy.html',
-        disclaimer: 'disclaimer.html',
+        legal: 'legal/index.html',
+        privacy: 'privacy/index.html',
+        disclaimer: 'disclaimer/index.html',
       },
     },
   },
