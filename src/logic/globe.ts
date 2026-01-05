@@ -26,8 +26,7 @@ async function initGlobe() {
             'sources': {
                 'satellite': {
                     'tiles': ['https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2024_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg'],
-                    'type': 'raster',
-                    'attribution': '© <a href="https://s2maps.eu" target="_blank">Sentinel-2 cloudless</a> by <a href="https://eox.at" target="_blank">EOX IT Services GmbH</a>'
+                    'type': 'raster'
                 },
             },
             'layers': [
