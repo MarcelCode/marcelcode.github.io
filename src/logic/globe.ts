@@ -12,50 +12,54 @@ async function initGlobe() {
         return Math.log2(minDimension / (256 * fillFactor));
     }
 
-    const zoom = calculateGlobeZoom(document.getElementById('header-map')!)
+    const containerEl = document.getElementById('header-map')!
+    const zoom = calculateGlobeZoom(containerEl)
 
     const map = new maplibregl.Map({
         container: 'header-map',
         zoom: zoom,
         interactive: false,
         style: {
-            'version': 8,
-            'projection': {
-                'type': 'globe'
-            },
-            'sources': {
-                'satellite': {
-                    'tiles': ['https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2024_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg'],
-                    'type': 'raster'
+            version: 8,
+            projection: { type: 'globe' },
+            sources: {
+                satellite: {
+                    tiles: ['https://tiles.maps.eox.at/wmts/1.0.0/s2cloudless-2024_3857/default/GoogleMapsCompatible/{z}/{y}/{x}.jpg'],
+                    type: 'raster'
                 },
             },
-            'layers': [
+            layers: [
                 {
-                    'id': 'Satellite',
-                    'type': 'raster',
-                    'source': 'satellite',
-                    'paint': {
+                    id: 'background',
+                    type: 'background',
+                    paint: {
+                        'background-color': 'rgba(0,0,0,0)'
+                    }
+                },
+                {
+                    id: 'Satellite',
+                    type: 'raster',
+                    source: 'satellite',
+                    paint: {
                         'raster-opacity': 0,
-                        'raster-opacity-transition': {
-                            duration: 1000,
-                            delay: 0
-                        }
+                        'raster-opacity-transition': { duration: 1000, delay: 0 }
                     }
                 },
             ],
-            'sky': {
-                'atmosphere-blend': 0,
-            }
+            sky: { 'atmosphere-blend': 0 }
         },
-        fadeDuration: 0,  // Disable tile fade-in for instant appearance once loaded
+        fadeDuration: 0,
         attributionControl: false
     });
 
+    // Reveal only after first frame is actually rendered (prevents the white flicker)
+    map.once('render', () => {
+        containerEl.classList.add('globe-ready')
+    })
+
     map.on('load', () => {
         map.setPaintProperty('Satellite', 'raster-opacity', 1);
-        map.setSky({
-            'atmosphere-blend': 0.3
-        });
+        map.setSky({ 'atmosphere-blend': 0.3 });
 
         let longitude = 0;
         let mouseX = 0;
@@ -67,7 +71,6 @@ async function initGlobe() {
         let isGlobeVisible = true;
         let animationFrameId: number;
 
-        // Intersection Observer to pause animation when globe is off-screen
         const observer = new IntersectionObserver(
             (entries) => {
                 isGlobeVisible = entries[0].isIntersecting;
@@ -75,28 +78,24 @@ async function initGlobe() {
                     rotateGlobe();
                 }
             },
-            {threshold: 0}
+            { threshold: 0 }
         );
-        observer.observe(document.getElementById('header-map')!);
+        observer.observe(containerEl);
 
-        // Throttle mousemove for better performance
         let lastMouseUpdate = 0;
-        const mouseUpdateInterval = 16; // ~60fps
+        const mouseUpdateInterval = 16;
 
-        // Track mouse position (only in header area)
         const header = document.querySelector('header');
         header?.addEventListener('mousemove', (e) => {
             const now = Date.now();
             if (now - lastMouseUpdate < mouseUpdateInterval) return;
             lastMouseUpdate = now;
 
-            // Normalize mouse position to -1 to 1 range
             mouseX = (e.clientX / window.innerWidth) * 2 - 1;
             mouseY = (e.clientY / window.innerHeight) * 2 - 1;
 
             isMouseMoving = true;
 
-            // Reset timeout
             clearTimeout(mouseTimeout);
             mouseTimeout = setTimeout(() => {
                 isMouseMoving = false;
@@ -109,7 +108,6 @@ async function initGlobe() {
                 return;
             }
 
-            // Only auto-rotate when mouse is not moving
             if (!isMouseMoving) {
                 longitude = (longitude - 0.1) % 360;
             }
@@ -117,7 +115,6 @@ async function initGlobe() {
             const targetParallaxLng = mouseX * 30;
             const targetParallaxLat = -mouseY * 30;
 
-            // Smoothly interpolate towards target
             const lerpFactor = 0.05;
             currentParallaxLng += (targetParallaxLng - currentParallaxLng) * lerpFactor;
             currentParallaxLat += (targetParallaxLat - currentParallaxLat) * lerpFactor;
@@ -130,7 +127,7 @@ async function initGlobe() {
     });
 
     window.addEventListener('resize', () => {
-        const newZoom = calculateGlobeZoom(document.getElementById('header-map')!);
+        const newZoom = calculateGlobeZoom(containerEl);
         map.setZoom(newZoom);
     });
 }

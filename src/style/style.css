@@ -166,3 +166,18 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #00ffc0;
 }
+
+#header-map {
+  background: transparent !important;
+  opacity: 0;
+  transition: opacity 250ms ease;
+}
+
+#header-map.globe-ready {
+  opacity: 1;
+}
+
+#header-map .maplibregl-canvas-container,
+#header-map canvas.maplibregl-canvas {
+  background: transparent !important;
+}
