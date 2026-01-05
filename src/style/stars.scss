@@ -20,6 +20,10 @@ $shadows-big:    multiple-box-shadow(80);
 }
 
 #stars {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
   width: 1px;
   height: 1px;
   background: transparent;
@@ -39,6 +43,10 @@ $shadows-big:    multiple-box-shadow(80);
 }
 
 #stars2 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
   width: 2px;
   height: 2px;
   background: transparent;
@@ -58,6 +66,10 @@ $shadows-big:    multiple-box-shadow(80);
 }
 
 #stars3 {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+
   width: 3px;
   height: 3px;
   background: transparent;
@@ -76,27 +88,7 @@ $shadows-big:    multiple-box-shadow(80);
   }
 }
 
-#title {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  color: #FFF;
-  text-align: center;
-  font-family: 'lato',sans-serif;
-  font-weight: 300;
-  font-size: 50px;
-  letter-spacing: 10px;
-  margin-top: -60px;
-  padding-left: 10px;
-
-  span {
-    background: -webkit-linear-gradient(white, #38495a);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-  }
-}
-
+// ... existing code ...
 @keyframes animStar {
   from {
     transform: translateX(0);
