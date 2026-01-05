@@ -33,7 +33,9 @@
                href="#contact">Contact</a>
         </div>
         <div class="md:hidden">
-            <button id="mobile-menu-button" class="material-symbols-outlined text-text-light cursor-pointer" aria-label="Toggle menu">menu</button>
+            <button id="mobile-menu-button" class="material-symbols-outlined text-text-light cursor-pointer"
+                    aria-label="Toggle menu">menu
+            </button>
         </div>
     </div>
 </nav>
@@ -41,17 +43,25 @@
 <!-- Mobile Menu -->
 <div id="mobile-menu" class="fixed inset-0 z-40 hidden">
     <div id="mobile-menu-backdrop" class="absolute inset-0 bg-background-dark/95 backdrop-blur-sm"></div>
-    <div id="mobile-menu-panel" class="absolute right-0 top-0 h-full w-64 bg-surface-dark border-l border-border-dark shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
+    <div id="mobile-menu-panel"
+         class="absolute right-0 top-0 h-full w-64 bg-surface-dark border-l border-border-dark shadow-2xl transform translate-x-full transition-transform duration-300 ease-in-out">
         <div class="flex flex-col h-full">
             <div class="flex items-center justify-between p-6 border-b border-border-dark">
                 <h3 class="text-text-light text-lg font-bold">Menu</h3>
-                <button id="mobile-menu-close" class="material-symbols-outlined text-text-light cursor-pointer hover:text-primary" aria-label="Close menu">close</button>
+                <button id="mobile-menu-close"
+                        class="material-symbols-outlined text-text-light cursor-pointer hover:text-primary"
+                        aria-label="Close menu">close
+                </button>
             </div>
             <nav class="flex flex-col p-6 gap-6">
-                <a class="mobile-menu-link text-text-light hover:text-primary text-base font-bold transition-colors uppercase tracking-wider" href="#about">About</a>
-                <a class="mobile-menu-link text-text-light hover:text-primary text-base font-bold transition-colors uppercase tracking-wider" href="#skills">Skills</a>
-                <a class="mobile-menu-link text-text-light hover:text-primary text-base font-bold transition-colors uppercase tracking-wider" href="#projects">Projects</a>
-                <a class="mobile-menu-link text-text-light hover:text-primary text-base font-bold transition-colors uppercase tracking-wider" href="#contact">Contact</a>
+                <a class="mobile-menu-link text-text-light hover:text-primary text-base font-bold transition-colors uppercase tracking-wider"
+                   href="#about">About</a>
+                <a class="mobile-menu-link text-text-light hover:text-primary text-base font-bold transition-colors uppercase tracking-wider"
+                   href="#skills">Skills</a>
+                <a class="mobile-menu-link text-text-light hover:text-primary text-base font-bold transition-colors uppercase tracking-wider"
+                   href="#projects">Projects</a>
+                <a class="mobile-menu-link text-text-light hover:text-primary text-base font-bold transition-colors uppercase tracking-wider"
+                   href="#contact">Contact</a>
             </nav>
         </div>
     </div>
@@ -104,7 +114,8 @@
                 </div>
 
                 <!-- Right side globe (hidden on mobile) -->
-                <div class="hidden md:block h-[360px] sm:h-[440px] md:h-[600px] lg:h-[760px] relative z-3 mx-auto w-full" id="header-map"></div>
+                <div class="hidden md:block h-[360px] sm:h-[440px] md:h-[600px] lg:h-[760px] relative z-3 mx-auto w-full"
+                     id="header-map"></div>
             </div>
         </div>
     </div>
@@ -382,7 +393,8 @@
                         <label class="text-text-light text-sm font-medium ml-1" for="email">Email</label>
                         <input class="h-12 w-full rounded-lg bg-background-dark border border-border-dark text-text-light px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent font-body placeholder-text-muted"
                                id="email" placeholder="your.email@example.com" type="email" required/>
-                        <span id="email-error" class="text-red-400 text-xs ml-1 hidden">Please enter a valid email</span>
+                        <span id="email-error"
+                              class="text-red-400 text-xs ml-1 hidden">Please enter a valid email</span>
                     </div>
                     <div class="flex flex-col gap-1">
                         <label class="text-text-light text-sm font-medium ml-1" for="message">Message</label>
@@ -422,7 +434,6 @@
 <script>
     // Navbar scroll effect with throttling
     const navbar = document.getElementById('navbar');
-    const header = document.querySelector('header');
     let isScrolling = false;
     let lastScrollY = 0;
 
@@ -493,7 +504,6 @@
 
     // Contact form submission
     const sendMessageBtn = document.getElementById('send-message-btn');
-    const SENDING_ENABLED = true; // Set to true to enable sending
 
     sendMessageBtn.addEventListener('click', async (e) => {
         e.preventDefault();
