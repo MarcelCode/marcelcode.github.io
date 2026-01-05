@@ -34,3 +34,4 @@ jobs:
           protocol: ftps
           local-dir: ./dist/
           server-dir: /siegmann.dev/
+          dry-run: true
