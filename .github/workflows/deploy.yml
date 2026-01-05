@@ -34,4 +34,5 @@ jobs:
           protocol: ftps
           local-dir: ./dist/
           server-dir: /siegmann.dev/
-          dry-run: true
+          timeout: 300000
+          log-level: verbose
