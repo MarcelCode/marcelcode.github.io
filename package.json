@@ -15,7 +15,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
-    "maplibre-gl": "^5.13.0",
+    "maplibre-gl": "^5.15.0",
     "tailwindcss": "^4.1.17"
   }
 }

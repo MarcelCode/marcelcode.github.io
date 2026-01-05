@@ -1,7 +1,7 @@
-async function initGlobe() {
-    const maplibregl = await import('maplibre-gl');
-    await import('maplibre-gl/dist/maplibre-gl.css');
+import maplibregl from 'maplibre-gl'
+import 'maplibre-gl/dist/maplibre-gl.css'
 
+async function initGlobe() {
     function calculateGlobeZoom(containerElement: HTMLElement): number {
         const width = containerElement.clientWidth;
         const height = containerElement.clientHeight;
@@ -48,16 +48,14 @@ async function initGlobe() {
                 'atmosphere-blend': 0,
             }
         },
-        fadeDuration: 0  // Disable tile fade-in for instant appearance once loaded
+        fadeDuration: 0,  // Disable tile fade-in for instant appearance once loaded
+        attributionControl: false
     });
 
     map.on('load', () => {
-        map.once('idle', () => {
-            map.setPaintProperty('Satellite', 'raster-opacity', 1);
-
-            map.setSky({
-                'atmosphere-blend': 0.3
-            });
+        map.setPaintProperty('Satellite', 'raster-opacity', 1);
+        map.setSky({
+            'atmosphere-blend': 0.3
         });
 
         let longitude = 0;
