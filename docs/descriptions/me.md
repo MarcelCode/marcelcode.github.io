@@ -1,6 +1,6 @@
 # About Me
 
-- Proudly working as Innovation Team Lead at EOMAP
+- Proudly working as Team Lead at EOMAP
 - Still like to code and prototype to try out newest innovations in the geospatial world
 - I love to combine model geospatial technologies like COG, PmTiles, STAC with a modern serverless clud architecture
 - A big fan of not reinventing the wheel and combining existing open-source solutions to create someting new
@@ -19,7 +19,7 @@ cloud solution for visualizing and analyzing spatio‑temporal raster data, whic
 cloud costs by over 95%.
 At EOMAP, I play a crucial role in the company’s growth and success. Starting as a Junior Backend Engineer, I contributed sig‑
 nificantly to expanding our team from two to ten software engineers. My dedication and leadership were recognized when I was
-promoted to Innovation Team Lead in 2023. I have ensured clear responsibilities and effective collaboration within the team, driving the de‑
+promoted to Team Lead in 2023. I have ensured clear responsibilities and effective collaboration within the team, driving the de‑
 velopment of innovative solutions that have substantially contributed to EOMAP’s success.
 In my professional role, I have scaled satellite processing pipelines from local systems to cloud environments using AWS technolo‑
 gies, processing hundreds of satellite scenes in parallel. I implemented microservice architectures with several API services using
