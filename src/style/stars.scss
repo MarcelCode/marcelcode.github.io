@@ -10,9 +10,20 @@
   @return string.unquote($value);
 }
 
-$shadows-small:  multiple-box-shadow(700);
-$shadows-medium: multiple-box-shadow(300);
-$shadows-big:    multiple-box-shadow(80);
+// Desktop (default)
+$shadows-small-desktop:  multiple-box-shadow(700);
+$shadows-medium-desktop: multiple-box-shadow(300);
+$shadows-big-desktop:    multiple-box-shadow(80);
+
+// Tablet
+$shadows-small-tablet:  multiple-box-shadow(450);
+$shadows-medium-tablet: multiple-box-shadow(200);
+$shadows-big-tablet:    multiple-box-shadow(55);
+
+// Mobile
+$shadows-small-mobile:  multiple-box-shadow(250);
+$shadows-medium-mobile: multiple-box-shadow(120);
+$shadows-big-mobile:    multiple-box-shadow(30);
 
 .header {
   background: radial-gradient(circle at 80% 50%, #1B2735 0%, #090A0F 100%);
@@ -27,7 +38,7 @@ $shadows-big:    multiple-box-shadow(80);
   width: 1px;
   height: 1px;
   background: transparent;
-  box-shadow: $shadows-small;
+  box-shadow: $shadows-small-desktop;
   animation: animStar 1000s linear infinite;
   will-change: transform;
 
@@ -38,7 +49,7 @@ $shadows-big:    multiple-box-shadow(80);
     width: 1px;
     height: 1px;
     background: transparent;
-    box-shadow: $shadows-small;
+    box-shadow: $shadows-small-desktop;
   }
 }
 
@@ -50,7 +61,7 @@ $shadows-big:    multiple-box-shadow(80);
   width: 2px;
   height: 2px;
   background: transparent;
-  box-shadow: $shadows-medium;
+  box-shadow: $shadows-medium-desktop;
   animation: animStar 600s linear infinite;
   will-change: transform;
 
@@ -61,7 +72,7 @@ $shadows-big:    multiple-box-shadow(80);
     width: 2px;
     height: 2px;
     background: transparent;
-    box-shadow: $shadows-medium;
+    box-shadow: $shadows-medium-desktop;
   }
 }
 
@@ -73,7 +84,7 @@ $shadows-big:    multiple-box-shadow(80);
   width: 3px;
   height: 3px;
   background: transparent;
-  box-shadow: $shadows-big;
+  box-shadow: $shadows-big-desktop;
   animation: animStar 300s linear infinite;
   will-change: transform;
 
@@ -84,7 +95,45 @@ $shadows-big:    multiple-box-shadow(80);
     width: 3px;
     height: 3px;
     background: transparent;
-    box-shadow: $shadows-big;
+    box-shadow: $shadows-big-desktop;
+  }
+}
+
+/* Tablet breakpoint */
+@media (max-width: 1024px) {
+  #stars {
+    animation-duration: 750s;
+    box-shadow: $shadows-small-tablet;
+    &:after { box-shadow: $shadows-small-tablet; }
+  }
+  #stars2 {
+    animation-duration: 450s;
+    box-shadow: $shadows-medium-tablet;
+    &:after { box-shadow: $shadows-medium-tablet; }
+  }
+  #stars3 {
+    animation-duration: 225s;
+    box-shadow: $shadows-big-tablet;
+    &:after { box-shadow: $shadows-big-tablet; }
+  }
+}
+
+/* Mobile breakpoint */
+@media (max-width: 640px) {
+  #stars {
+    animation-duration: 500s;
+    box-shadow: $shadows-small-mobile;
+    &:after { box-shadow: $shadows-small-mobile; }
+  }
+  #stars2 {
+    animation-duration: 300s;
+    box-shadow: $shadows-medium-mobile;
+    &:after { box-shadow: $shadows-medium-mobile; }
+  }
+  #stars3 {
+    animation-duration: 150s;
+    box-shadow: $shadows-big-mobile;
+    &:after { box-shadow: $shadows-big-mobile; }
   }
 }
 
