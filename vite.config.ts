@@ -13,6 +13,9 @@ export default defineConfig({
         legal: 'legal/index.html',
         privacy: 'privacy/index.html',
         disclaimer: 'disclaimer/index.html',
+
+        projectsAwsAl2023Gdal: 'projects/aws-al2023-gdal/index.html',
+        projectsRastless: 'projects/rastless/index.html',
       },
     },
   },
